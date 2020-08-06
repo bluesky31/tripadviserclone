@@ -17,7 +17,7 @@ const Gallery = ({images}:{images:string[]}) => {
         }
     } 
     return <div className="gallery">
-        <img className="gallery-image" src={directory(images[imageNum])} alt="error loading image" />
+        <img className="gallery-image" src={directory(images[imageNum])} alt="error loading" />
         <Button icon={<LeftOutlined/>} onClick={() => {change("left")}} className="button-left" style={{backgroundColor:"red"}}/>
         <Button icon={<RightOutlined/>} onClick={() => {change("right")}} className="button-right"/>
     </div> 

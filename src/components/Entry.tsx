@@ -7,6 +7,7 @@ import Input from "./Input";
 const Entry = ({images, title, rating}:{title:string, images:Array<string>, rating:number}) => {
     return (<>
     <Space direction="horizontal" size={10} style={{backgroundColor:"green",width:"500px",height:"270px"}}>
+    <Gallery images={images}/>
         <Space direction="vertical" size={10} style={{backgroundColor:"green",width:"200px",height:"270px"}}>
             <span className="entry-title">abcdefghijklmn</span>
             <Space direction="horizontal" style={{backgroundColor:"green"}}>
@@ -17,8 +18,8 @@ const Entry = ({images, title, rating}:{title:string, images:Array<string>, rati
                 <span>hi</span>
             </Space>
         </Space>
-    </Space>
+    </Space> 
     </>)
-}
+} 
 
 export default Entry;
