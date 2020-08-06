@@ -1,6 +1,6 @@
 @import '~antd/dist/antd.less';
 @gallery-width: 300px;
-@gallery-height: 300px;
+@gallery-height: 270px;
 
 body {
   margin: 0;
@@ -17,19 +17,41 @@ code {
 }
 
 .gallery {
+  position:inline-block;
+  box-sizing: border-box;
   width: @gallery-width;
   height: @gallery-height;
-  image{
+
+  img.gallery-image{
     position: absolute;
     width: @gallery-width;
     height: @gallery-height;
   }
   .button-left{
-    vertical-align: middle;
+    top: 50%;
+    transform: translateY(-50%);
     float: left;
+    margin-left: 5%;
+    :hover{
+      background-color:silver;
+    }
   }
   .button-right{
-    vertical-align: middle;
+    top: 50%;
+    transform: translateY(-50%);
     float: right;
+    margin-right: 5%;/*
+    background-color:green!important;
+    :hover{
+      background-color:blue!important;
+    }*/
   }
+}
+
+.entry-title{
+  color: black;
+  font-size: 10em;
+  font-family: monospace;
+  //overflow: hidden;
+  text-overflow: ellipsis;
 }
