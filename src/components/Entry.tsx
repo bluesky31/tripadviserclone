@@ -3,20 +3,19 @@ import React from 'react';
 import Gallery from "./Gallery";
 import Info from "./Info";
 import Input from "./Input";
+import Data from "./Data";
 
-const Entry = ({images, title, rating}:{title:string, images:Array<string>, rating:number}) => {
+const Entry = ({props}:{props:Data}) => {
     return (<>
-    <Space direction="horizontal" size={10} style={{backgroundColor:"green",width:"500px",height:"270px"}}>
-    <Gallery images={images}/>
-        <Space direction="vertical" size={10} style={{backgroundColor:"green",width:"200px",height:"270px"}}>
-            <span className="entry-title">abcdefghijklmn</span>
-            <Space direction="horizontal" style={{backgroundColor:"green"}}>
-                <span>hi</span>
-                {/*<Info rating={rating}/>*/}
-                <Divider type="vertical" style={{backgroundColor:"black",paddingLeft:"10px"}}/>  
-                {/*<Input rating={rating}/>*/}
-                <span>hi</span>
-            </Space>
+    <Space direction="horizontal" size={0} className="entry-container">
+    <Gallery images={props.images}/>
+        <Space direction="vertical" size={0} className="right-parent-container">
+            <span className="entry-title">{props.title}</span>
+            <div className="right-container">
+                <Info props={props}/>
+                <Divider type="vertical" className="entry-divider"/>  
+                <Input props={props}/>
+            </div>
         </Space>
     </Space> 
     </>)

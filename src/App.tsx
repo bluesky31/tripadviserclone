@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { Space, Button } from 'antd';
-import { Switch } from 'antd';
-import Entry from './components/Gallery';
+import React from 'react';
+import Entry from './components/Entry';
+import Data from './components/Data';
+import EntryList from './components/EntryList';
 
 const App = () => {
-  const [enable, setEnable] = useState(true);
-
-  return (
-    <Space direction="vertical" size={10} align="center" style={{width:"100%",display:"inlineBlock"}}>
-      <Switch defaultChecked checkedChildren="hi" disabled={enable} />
-      <Button onClick={() => setEnable(!enable)}>Change</Button>
-      <Entry images={["./img1.jpg","./img2.jpg","./img3.jpg"]} />
-      <Entry images={["./img1.jpg","./img2.jpg","./img3.jpg"]} />
-    </Space>
-  );
+  const data:Data[] = require("./data-entries.json");
+  var display = data.map((i:Data)=>(<Entry props={i}/>));
+  const title = require("./images/img0.jpg");
+  return (<>
+    <div className="title">
+      <img src={title}/>
+      <h1>TripOdviser</h1>
+    </div>
+    <EntryList entries={display}/>
+  </>);
 };
  
 export default App;
